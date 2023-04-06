@@ -15,7 +15,7 @@ import com.web.study.dto.ResponseDto;
 import com.web.study.dto.request.BasicTestDto2;
 
 @RestController
-public class BasicContoller2 {
+public class BasicRestContoller2 {
 	
 	// 책이름으로 값 찾아서 찾은 값 답장 해주기
 	@GetMapping("/book/read")

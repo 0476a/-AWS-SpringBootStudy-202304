@@ -15,7 +15,7 @@ import com.web.study.dto.ResponseDto;
 import com.web.study.dto.request.BasicTestDto3;
 
 @RestController
-public class BasicController3 {
+public class BasicRestController3 {
 	
 	// 노래 제목으로 노래제목 찾아서 받아온 값을 다시 답장해줌.
 	@GetMapping("/music/read")

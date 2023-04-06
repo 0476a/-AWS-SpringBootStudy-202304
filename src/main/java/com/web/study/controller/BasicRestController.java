@@ -97,6 +97,7 @@ public class BasicRestController {
 		public ResponseEntity<? extends ResponseDto> create(@RequestBody BasicTestDto basicTestDto) {
 			System.out.println("데이터 추가");
 			
+			// created에 null에는 넘어갈 페이지의 uri를 지정해 줄 수 있다.
 			return ResponseEntity.created(null).body(DataResponseDto.of(basicTestDto));
 		}
 }
