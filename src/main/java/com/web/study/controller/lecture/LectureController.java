@@ -16,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class LectureController {
 
+	// 만약 lectureService를 autowired를 해서 원하는 구현문을 넣어준다.
 	private final LectureService lectureService;
 	
 	// Create
