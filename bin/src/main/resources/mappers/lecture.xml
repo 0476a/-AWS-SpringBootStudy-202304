@@ -10,6 +10,4 @@
 		values (0, #{lecture_name}, #{lecture_price}, #{lecturer_id})
 	</insert>
 	
-	
-	
 </mapper>

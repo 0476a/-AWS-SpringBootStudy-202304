@@ -8,4 +8,5 @@ import com.web.study.domain.entity.Lecture;
 public interface LectureRepository {
 	
 	public int registe(Lecture lecture);
+	
 }
