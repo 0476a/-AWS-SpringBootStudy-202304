@@ -2,30 +2,20 @@ package com.web.study.service;
 
 import org.springframework.stereotype.Service;
 
-
 import com.web.study.domain.entity.Lecture;
-import com.web.study.domain.entity.LectureRegiste;
-import com.web.study.domain.entity.Lecturer;
-import com.web.study.domain.entity.Student;
-import com.web.study.dto.request.lecture.LectureRegisteReqDto;
 import com.web.study.dto.request.lecture.LectureReqDto;
-import com.web.study.dto.request.lecture.LecturerReqDto;
-import com.web.study.dto.request.lecture.StudentReqDto;
-import com.web.study.repository.LectureRegisteRepository;
 import com.web.study.repository.LectureRepository;
-import com.web.study.repository.LecturerRepository;
-import com.web.study.repository.StudentRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class LectureServiceImpl implements LectureService{
-	
+public class LectureServiceImpl implements LectureService {
+
+	// final => 상수: 초기화가 무조건 일어나야함.
+	// 값을 무조건 넣어야하기 때문에 강제성이 생김.
+	// -> spring이 IOC에서 값을 꺼내서 넣어줘야하겠다는 가이드가 잡힘.
 	private final LectureRepository lectureRepository;
-	private final LecturerRepository lecturerRepository;
-	private final LectureRegisteRepository lectureRegisteRepository;
-	private final StudentRepository studentRepository;
 
 	@Override
 	public void registeLecture(LectureReqDto lectureReqDto) {
@@ -33,28 +23,7 @@ public class LectureServiceImpl implements LectureService{
 		Lecture lecture = lectureReqDto.toEntity();
 		System.out.println("변환: " + lecture);
 		// xml에 해당 매개변수를 전달하는 것임.
-		lectureRepository.registe(lecture);
-	}
-	
-	@Override
-	public void registeLecturer(LecturerReqDto lecturerReqDto) {
-		Lecturer lecturer = lecturerReqDto.toEntity();
-		System.out.println("변환: " + lecturer);
-		lecturerRepository.registe(lecturer);
-	}
-
-	@Override
-	public void registeLectureRegiste(LectureRegisteReqDto lectureRegisteReqDto) {
-		LectureRegiste lectureRegiste = lectureRegisteReqDto.toEntity();
-		System.out.println("변환: " + lectureRegiste);
-		lectureRegisteRepository.registe(lectureRegiste);
-	}
-
-	@Override
-	public void registeStudent(StudentReqDto studentReqDto) {
-		Student student = studentReqDto.toEntity();
-		System.out.println("변환: " + student);
-		studentRepository.registe(student);
+		lectureRepository.saveLecture(lecture);
 	}
 
 }

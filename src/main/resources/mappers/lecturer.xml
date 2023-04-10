@@ -5,9 +5,29 @@
   
 <mapper namespace="com.web.study.repository.LecturerRepository">
 
-	<insert id="registe" parameterType="com.web.study.domain.entity.Lecturer">
+	<insert id="saveLecturer" parameterType="Lecturer">
 		insert into lecturer_mst
 		values (0, #{name}, #{birth_date})
 	</insert>
+	
+	<select id="getLecturerAll" resultType="Lecturer">
+		select
+			id,
+			name,
+			birth_date
+		from
+			lecturer_mst
+	</select>
+	
+	<select id="findLecturerById" parameterType="Integer" resultType="Lecturer">
+		select
+			id,
+			name,
+			birth_date
+		from
+			lecturer_mst
+		where
+			id = #{id}
+	</select>
 	
 </mapper>
