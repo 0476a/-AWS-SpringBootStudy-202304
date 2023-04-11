@@ -4,12 +4,16 @@ import java.time.LocalDate;
 
 import com.web.study.dto.response.InstructorRespDto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Builder
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString
 public class Instructor {
 	private int itm_id;

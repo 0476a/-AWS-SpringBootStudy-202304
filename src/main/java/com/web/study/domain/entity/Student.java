@@ -4,11 +4,15 @@ import java.time.LocalDate;
 
 import com.web.study.dto.response.StudentRespDto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @ToString
 //@Alias("S1")

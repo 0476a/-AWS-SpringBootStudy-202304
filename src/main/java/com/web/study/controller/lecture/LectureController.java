@@ -1,6 +1,7 @@
 package com.web.study.controller.lecture;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +41,14 @@ public class LectureController {
 	public ResponseEntity<? extends ResponseDto> getInstructorById(@PathVariable int id) {
 		
 		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.findLectureById(id)));
+	}
+	
+  // type은 int이기 때문에 필수자료형이 되어버림.
+  // 파라메터가 String값으로 들여오기 때문에 값이 null 이면 type 값이 자동으로 0이 되지 않는다.
+  // 만약 type을 필수자료형으로 사용하고 싶지 않다면 type과 searchValue를 객체로 빼줘야함!
+	@GetMapping("/search/lectures")
+	public ResponseEntity<? extends ResponseDto> searchLecture(int type, String searchValue) {
+		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.searchLecture(type, searchValue)));
 	}
 
 	// Read
