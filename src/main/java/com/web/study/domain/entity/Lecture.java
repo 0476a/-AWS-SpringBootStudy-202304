@@ -10,17 +10,17 @@ import lombok.ToString;
 @Getter
 @ToString
 public class Lecture {
-	private int id;
-	private String lecture_name;
-	private int lecture_price;
-	private int lecturer_id;
+	private int ltm_id;
+	private String ltm_name;
+	private int ltm_price;
+	private int itm_id;
 	
 	public LectureRespDto toDto() {
 		return LectureRespDto.builder()
-				.id(id)
-				.lectureName(lecture_name)
-				.lecturePrice(lecture_price)
-				.lecturerId(lecturer_id)
+				.id(ltm_id)
+				.lectureName(ltm_name)
+				.lecturePrice(ltm_price)
+				.instructorId(itm_id)
 				.build();
 	}
 }

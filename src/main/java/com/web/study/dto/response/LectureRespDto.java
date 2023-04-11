@@ -9,5 +9,5 @@ public class LectureRespDto {
 	private int id;
 	private String lectureName;
 	private int lecturePrice;
-	private int lecturerId;
+	private int instructorId;
 }

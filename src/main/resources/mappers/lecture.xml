@@ -7,7 +7,7 @@
 
 	<insert id="saveLecture" parameterType="com.web.study.domain.entity.Lecture">
 		insert into lecture_mst
-		values (0, #{lecture_name}, #{lecture_price}, #{lecturer_id})
+		values (0, #{lecture_name}, #{lecture_price}, #{instructor_id})
 	</insert>
 	
 	<select id="getLectureAll" resultType="Lecture">
@@ -15,7 +15,7 @@
 			id,
 			lecture_name,
 			lecture_price,
-			lecturer_id
+			instructor_id
 		from
 			lecture_mst
 	</select>
@@ -25,7 +25,7 @@
 			id,
 			lecture_name,
 			lecture_price,
-			lecturer_id
+			instructor_id
 		from
 			lecture_mst
 		where

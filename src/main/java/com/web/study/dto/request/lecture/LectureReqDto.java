@@ -10,15 +10,15 @@ import lombok.ToString;
 public class LectureReqDto {
 	private String lectureName;
 	private int lecturePrice;
-	private int lecturerId;
+	private int instructorId;
 	
 	// getter를 않쓰는 상황
 	// Dto 값을 Entity로 바꿔주는 메소드
 	public Lecture toEntity() {
 		return Lecture.builder()
-				.lecture_name(lectureName)
-				.lecture_price(lecturePrice)
-				.lecturer_id(lecturerId)
+				.ltm_name(lectureName)
+				.ltm_price(lecturePrice)
+				.itm_id(instructorId)
 				.build();
 	}
 }

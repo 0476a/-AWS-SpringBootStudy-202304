@@ -37,7 +37,7 @@ public class LectureController {
 	}
 	
 	@GetMapping("/lecture/{id}")
-	public ResponseEntity<? extends ResponseDto> getLecturerById(@PathVariable int id) {
+	public ResponseEntity<? extends ResponseDto> getInstructorById(@PathVariable int id) {
 		
 		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.findLectureById(id)));
 	}
