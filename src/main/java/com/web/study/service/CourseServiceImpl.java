@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
+import org.springframework.util.StopWatch;
 
+import com.web.study.aop.annotation.ReturnDataAspect;
 import com.web.study.domain.entity.Course;
 import com.web.study.dto.request.course.CourseReqDto;
 import com.web.study.dto.response.CourseRespDto;
@@ -23,20 +25,25 @@ public class CourseServiceImpl implements CourseService{
 	@Override
 	public void registeCourse(CourseReqDto courseReqDto) {
 //		System.out.println(courseReqDto);
+		
 		Course course = courseReqDto.toEntity();
 		System.out.println("변환: " + course);
 		courseRepository.saveCourse(course);
+		
 	}
 
 	@Override
 	public List<CourseRespDto> getCourseAll() {
+		
 		List<CourseRespDto> dtos = new ArrayList<>();
 		courseRepository.getCourseAll().forEach(entity -> {
 			dtos.add(entity.toDto());
 		});
+		
 		return dtos;
 	}
 
+	@ReturnDataAspect
 	@Override
 	public List<CourseRespDto> searchCourse(int type, String searchValue) {
 		Map<String, Object> parameterMap = new HashMap<>();
